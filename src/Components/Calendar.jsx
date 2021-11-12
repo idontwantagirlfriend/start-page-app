@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Calendar extends React.Component {
+class Calendar extends Component {
   render() {
     return (
       <div className="flex-grow-1">

@@ -1,20 +1,20 @@
 import React from "react";
-import Profile from "./ProfilePanel";
-import Calendar from "./Calendar";
+import Connectivity from "./Connectivity";
+import ResourceSection from "./ResourceSection";
 
-class Action extends React.Component {
+class Links extends React.Component {
   render() {
     return (
       <div className="row g-2 p-0">
         <div className="col-4 border-end border-dark border-2">
-          <Profile />
+          <ResourceSection />
         </div>
         <div className="col border-start border-dark border-2">
-          <Calendar />
+          <Connectivity />
         </div>
       </div>
     );
   }
 }
 
-export default Action;
+export default Links;

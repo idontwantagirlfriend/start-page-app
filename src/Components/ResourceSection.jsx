@@ -1,12 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
 
 class ResourceSection extends React.Component {
   render() {
     return (
-      <View>
-        <Text>The url links</Text>
-      </View>
+      <div className="justify-content-center">
+        <p>The url links</p>
+      </div>
     );
   }
 }

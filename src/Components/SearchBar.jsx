@@ -3,11 +3,15 @@ import React from "react";
 class SearchBar extends React.Component {
   render() {
     return (
-      <div className="mb-3" style={styles.searchSection}>
+      <div
+        className="mb-3"
+        className="align-items-center justify-content-center py-1"
+        style={styles.searchSection}
+      >
         <input
           className="form-control"
           placeholder="Search..."
-          className="align-self-center"
+          className="align-self-center px-1 border border-dark border-3"
           style={styles.searchBar}
         />
       </div>
@@ -16,17 +20,9 @@ class SearchBar extends React.Component {
 }
 
 const styles = {
-  searchSection: {
-    alignItems: "center",
-    padding: 10,
-    paddingTop: 100,
-    justifyContent: "center",
-  },
   searchBar: {
-    width: "60%",
-    maxWidth: 400,
-    padding: 10,
-    border: "5px solid black",
+    width: "80%",
+    maxWidth: 600,
   },
 };
 

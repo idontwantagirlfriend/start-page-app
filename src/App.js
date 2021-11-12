@@ -1,11 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
-import "./Components/css/styles.css";
-import TopPanel from "./Components/TopPanel";
+import "./css/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Helmet } from "react-helmet";
-import Grid from "./Components/Grid";
-import FirstScreen from "./Components/FirstScreen";
+import TopPanel from "./Components/TopPanel";
+import SearchBar from "./Components/SearchBar";
+import Action from "./Components/Action";
+import Links from "./Components/Links";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -21,12 +22,31 @@ function App() {
         />
         <title>Hello, world!</title>
       </Helmet>
-      <body className="container p-0">
-        <TopPanel />
-        <FirstScreen />
+      <body className="container-fluid" style={styles.wrapper}>
+        <div className="container">
+          <TopPanel />
+          <div className="row border">
+            <SearchBar />
+          </div>
+          <div className="row border">
+            <Action />
+          </div>
+          <div className="row border">
+            <Links />
+          </div>
+        </div>
       </body>
+      <footer className="bg-primary bg-gradient">
+        <Footer />
+      </footer>
     </div>
   );
 }
 
+const styles = {
+  wrapper: {
+    padding: 0,
+    paddingTop: 80,
+  },
+};
 export default App;
