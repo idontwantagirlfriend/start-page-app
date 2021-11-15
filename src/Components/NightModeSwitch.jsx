@@ -1,9 +1,20 @@
 import React from "react";
 
-const NightModeSwitch = () => {
-  return (
-    <p className="bg-white rounded rounded-pill px-1">Switch night mode</p>
-  );
-};
+class ThemeToggler extends React.Component {
+  onToggleTheme = () => {
+    this.props.themeData.handleToggleTheme();
+  };
+  render() {
+    const text = this.props.themeData.nightModeIsOn ? "ON" : "OFF";
+    return (
+      <button
+        className="bg-white bg-gradient rounded rounded-pill px-1"
+        onClick={this.onToggleTheme}
+      >
+        Switch night mode: {text}
+      </button>
+    );
+  }
+}
 
-export default NightModeSwitch;
+export default ThemeToggler;
