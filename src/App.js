@@ -2,6 +2,7 @@ import "./App.css";
 import "./css/styles.css";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import TopPanel from "./Components/TopPanel";

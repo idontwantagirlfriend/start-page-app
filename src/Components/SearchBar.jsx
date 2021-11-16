@@ -20,31 +20,27 @@ class SearchBar extends React.Component {
   };
   render() {
     return (
-      <div
-        className="mb-3"
-        className="align-items-center justify-content-center py-1"
-        style={styles.searchSection}
-      >
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className="form-control"
-            placeholder="Search..."
-            className="align-self-center px-3 border border-dark border-3 rounded-pill"
-            onChange={this.handleChange}
-            style={styles.searchBar}
-          />
+      <div className="py-1">
+        <form className="container-fluid" onSubmit={this.handleSubmit}>
+          <div
+            className="row gx-0 border border-primary border-3 rounded-pill align-items-center flex-nowrap"
+            id="searchBar-wrapper"
+          >
+            <input
+              className="col-1 border-light form-control rounded-pill flex-grow-1"
+              id="searchBar"
+              placeholder="Search..."
+              onChange={this.handleChange}
+            />
+            <div className="col-1 flex-shrink-0">
+              <span className="px-2">
+                <i class="bi bi-search text-black"></i>
+              </span>
+            </div>
+          </div>
         </form>
       </div>
     );
   }
 }
-
-const styles = {
-  searchBar: {
-    width: "80%",
-    maxWidth: 600,
-    height: 60,
-  },
-};
-
 export default SearchBar;
