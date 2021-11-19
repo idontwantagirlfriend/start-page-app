@@ -1,9 +1,6 @@
 import React from "react";
-import { darkModeClassNames, darkModeStyles } from "../css/js/darkModeStyles";
-import {
-  lightModeClassNames,
-  lightModeStyles,
-} from "../css/js/lightModeStyles";
+import { darkModeClassNames } from "../css/js/darkModeClassNames";
+import { lightModeClassNames } from "../css/js/LightModeClassNames";
 
 class ThemeToggler extends React.Component {
   onToggleTheme = () => {
@@ -14,7 +11,6 @@ class ThemeToggler extends React.Component {
     const themeClassNames = nightModeIsOn
       ? darkModeClassNames
       : lightModeClassNames;
-    const themeStyles = nightModeIsOn ? darkModeStyles : lightModeStyles;
     const themeIconClassName = themeClassNames.icon;
     const buttonClassName = themeClassNames.button;
     return (

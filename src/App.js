@@ -20,6 +20,10 @@ class App extends Component {
     newState.nightModeIsOn = !newState.nightModeIsOn;
     this.setState(newState);
   };
+  // handleAlternateStyleSheet = () => {
+  //   const StyleSheets = [];
+  //   StyleSheets.concat(document.getElementsByTagName("link"));
+  // };
   render() {
     const themeData = {
       nightModeIsOn: this.state.nightModeIsOn,
@@ -38,7 +42,7 @@ class App extends Component {
           />
           <title>Hello, world!</title>
         </Helmet>
-        <body className="container-fluid" style={styles.wrapper}>
+        <body className="container-fluid" style={styles.body}>
           <div className="container">
             <TopPanel themeData={themeData} />
             <div className="row border">
@@ -52,7 +56,7 @@ class App extends Component {
             </div>
           </div>
         </body>
-        <footer className="bg-primary bg-gradient">
+        <footer>
           <Footer />
         </footer>
       </div>
@@ -60,9 +64,9 @@ class App extends Component {
   }
 }
 const styles = {
-  wrapper: {
+  body: {
     padding: 0,
-    paddingTop: 80,
+    paddingTop: 100,
   },
 };
 export default App;

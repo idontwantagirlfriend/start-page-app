@@ -1,11 +1,8 @@
 import logo from "../logo.svg";
 import React from "react";
-import ThemeToggler from "./NightModeSwitch";
-import { darkModeClassNames, darkModeStyles } from "../css/js/darkModeStyles";
-import {
-  lightModeClassNames,
-  lightModeStyles,
-} from "../css/js/lightModeStyles";
+import ThemeToggler from "./ThemeToggler";
+import { darkModeClassNames } from "../css/js/darkModeClassNames";
+import { lightModeClassNames } from "../css/js/LightModeClassNames";
 
 class TopPanel extends React.Component {
   render() {
@@ -14,13 +11,11 @@ class TopPanel extends React.Component {
     const themeClassNames = nightModeIsOn
       ? darkModeClassNames
       : lightModeClassNames;
-    const themeStyles = nightModeIsOn ? darkModeStyles : lightModeStyles;
 
     const navBarClassName = themeClassNames.navBar;
-    const navBarStyle = themeStyles.navBar;
     const textClassName = themeClassNames.text + " navbar-brand";
     return (
-      <nav className={navBarClassName} style={navBarStyle}>
+      <nav className={navBarClassName} style={styles.navBar}>
         <div className="container-fluid justify-content-between">
           <div className="col-3 align-items-start">
             <a className={textClassName} href="#">
@@ -41,6 +36,9 @@ const styles = {
   img: {
     width: "25%",
     height: "25%",
+  },
+  navBar: {
+    opacity: "0.75",
   },
 };
 
