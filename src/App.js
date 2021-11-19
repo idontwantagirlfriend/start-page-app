@@ -14,21 +14,31 @@ import Footer from "./Components/Footer";
 class App extends Component {
   state = {
     nightModeIsOn: false,
+    mainId: "main",
   };
   handleToggleTheme = () => {
     const newState = { ...this.state };
     newState.nightModeIsOn = !newState.nightModeIsOn;
     this.setState(newState);
   };
-  // handleAlternateStyleSheet = () => {
-  //   const StyleSheets = [];
-  //   StyleSheets.concat(document.getElementsByTagName("link"));
-  // };
+  handleSearchBarAcquiresFocus = () => {
+    const newState = { ...this.state };
+    newState.mainId = "main-focus";
+    this.setState(newState);
+  };
+  handleSearchBarLosesFocus = () => {
+    const newState = { ...this.state };
+    newState.mainId = "main";
+    this.setState(newState);
+  };
   render() {
+    const nightModeIsOn = this.state.nightModeIsOn;
     const themeData = {
-      nightModeIsOn: this.state.nightModeIsOn,
+      nightModeIsOn,
       handleToggleTheme: this.handleToggleTheme,
     };
+    const mainId = this.state.mainId;
+    const nightClassName = nightModeIsOn ? "night " : "";
     return (
       <div className="App">
         <Helmet>
@@ -42,31 +52,29 @@ class App extends Component {
           />
           <title>Hello, world!</title>
         </Helmet>
-        <body className="container-fluid" style={styles.body}>
+        <div className={`container-fluid ${nightClassName}`} id={mainId}>
           <div className="container">
             <TopPanel themeData={themeData} />
-            <div className="row border">
-              <SearchBar />
+            <div className="row page-block" id="searchBar-row">
+              <SearchBar
+                onSearchBarAcquiresFocus={this.handleSearchBarAcquiresFocus}
+                onSearchBarLosesFocus={this.handleSearchBarLosesFocus}
+                nightModeIsOn={nightModeIsOn}
+              />
             </div>
-            <div className="row border">
+            <div className="row page-block">
               <Action />
             </div>
-            <div className="row border">
+            <div className="row page-block">
               <Links />
             </div>
           </div>
-        </body>
-        <footer>
-          <Footer />
+        </div>
+        <footer className={`${nightClassName}`}>
+          <Footer themeData={themeData} />
         </footer>
       </div>
     );
   }
 }
-const styles = {
-  body: {
-    padding: 0,
-    paddingTop: 100,
-  },
-};
 export default App;

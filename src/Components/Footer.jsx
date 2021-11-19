@@ -1,20 +1,21 @@
 import React from "react";
+import { darkModeClassNames } from "../css/js/darkModeClassNames";
+import { lightModeClassNames } from "../css/js/LightModeClassNames";
 
 class Footer extends React.Component {
   render() {
+    const content = "Created with react!";
+    const { themeData } = this.props;
+    const { nightModeIsOn } = themeData;
+    const themeClassNames = nightModeIsOn
+      ? darkModeClassNames
+      : lightModeClassNames;
     return (
-      <div
-        className="py-2 border align-items-center justify-content-center bg-primary bg-gradient"
-        style={styles.footer}
-      >
-        <p className="text-white">Copyright footer</p>
+      <div className={themeClassNames.footer}>
+        <span style={{ fontSize: 12 }}>{content}</span>
       </div>
     );
   }
 }
-const styles = {
-  footer: {
-    opacity: "0.75",
-  },
-};
+
 export default Footer;

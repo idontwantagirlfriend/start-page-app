@@ -6,10 +6,10 @@ class Action extends React.Component {
   render() {
     return (
       <div className="row g-2 p-0">
-        <div className="col-4 border-end border-dark border-2">
+        <div className="col-4 border-2">
           <Profile />
         </div>
-        <div className="col border-start border-dark border-2">
+        <div className="col border-2">
           <Calendar />
         </div>
       </div>

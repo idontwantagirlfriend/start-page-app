@@ -5,7 +5,11 @@ import { darkModeClassNames } from "../css/js/darkModeClassNames";
 import { lightModeClassNames } from "../css/js/LightModeClassNames";
 
 class TopPanel extends React.Component {
+  state = {
+    content: `I hope you know what you are doing...`,
+  };
   render() {
+    const content = this.state.content;
     const { themeData } = this.props;
     const { nightModeIsOn } = themeData;
     const themeClassNames = nightModeIsOn
@@ -15,15 +19,17 @@ class TopPanel extends React.Component {
     const navBarClassName = themeClassNames.navBar;
     const textClassName = themeClassNames.text + " navbar-brand";
     return (
-      <nav className={navBarClassName} style={styles.navBar}>
-        <div className="container-fluid justify-content-between">
-          <div className="col-3 align-items-start">
-            <a className={textClassName} href="#">
-              Fixed top
+      <nav className={navBarClassName}>
+        <div className="container-fluid justify-content-start">
+          <div className="col-1">
+            <a href="https://reactjs.org/">
+              <img style={styles.img} src={logo} className="App-logo" />
             </a>
-            <img style={styles.img} src={logo} />
           </div>
-          <div className="align-self-end align-content-end ">
+          <div className="col-5 align-items-start overflow-visible">
+            <span className={textClassName}>{content}</span>
+          </div>
+          <div className="align-self-end align-content-end ms-auto ">
             <ThemeToggler themeData={themeData} />
           </div>
         </div>
@@ -34,11 +40,8 @@ class TopPanel extends React.Component {
 
 const styles = {
   img: {
-    width: "25%",
-    height: "25%",
-  },
-  navBar: {
-    opacity: "0.75",
+    width: "100%",
+    height: "100%",
   },
 };
 
