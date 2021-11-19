@@ -23,11 +23,17 @@ footer.night {
   padding-top: 100px;
   padding-bottom: 300px;
   background-image: url("../res/Blue_sky.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
     background-image 0.15s ease-in-out;
 }
 #main.night {
   background-image: url("../res/Starry_night_sky.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
 }
 .page-block {
@@ -38,10 +44,16 @@ footer.night {
   padding-top: 250px;
   padding-bottom: 300px;
   background-image: url("../res/Blue_sky.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 #main-focus.night {
   background-image: url("../res/Starry_night_sky.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
 }
 
