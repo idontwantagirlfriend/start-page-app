@@ -21,7 +21,7 @@ footer.night {
 #main {
   padding: 0;
   padding-top: 100px;
-  padding-bottom: 300px;
+  min-height: 100vh;
   background-image: url("../res/Blue_sky.png");
   background-size: cover;
   background-position: center;
@@ -42,7 +42,7 @@ footer.night {
 #main-focus {
   padding: 0;
   padding-top: 250px;
-  padding-bottom: 300px;
+  min-height: 100vh;
   background-image: url("../res/Blue_sky.png");
   background-size: cover;
   background-position: center;

@@ -13,7 +13,7 @@ import Footer from "./Components/Footer";
 
 class App extends Component {
   state = {
-    nightModeIsOn: false,
+    nightModeIsOn: true,
     mainId: "main",
   };
   handleToggleTheme = () => {
