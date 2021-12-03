@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { nightModeContext } from "../App";
 
 export default function SearchBar(props) {
   const [searchContent, setSearchContent] = useState("");
@@ -6,6 +7,8 @@ export default function SearchBar(props) {
   const [searchBarWrapperId, setSearchBarWrapperId] =
     useState("searchBar-wrapper");
   const [searchIconId, setSearchIconId] = useState("search-icon");
+
+  const nightClassName = useContext(nightModeContext) ? "night " : "";
 
   const handleChange = (Event) => {
     Event.preventDefault();
@@ -30,8 +33,6 @@ export default function SearchBar(props) {
     setSearchIconId("search-icon");
     props.onSearchBarLosesFocus();
   };
-  const nightModeIsOn = props.nightModeIsOn;
-  const nightClassName = nightModeIsOn ? "night " : "";
   return (
     <div className="py-1">
       <form className="container-fluid" onSubmit={handleSubmit}>
