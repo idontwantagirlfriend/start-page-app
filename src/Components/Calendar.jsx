@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Calendar extends Component {
-  render() {
-    return (
-      <div className="flex-grow-1">
-        <p>Calendar</p>
-      </div>
-    );
-  }
+export default function Calendar() {
+  return (
+    <div className="flex-grow-1">
+      <p>Calendar</p>
+    </div>
+  );
 }
-
-export default Calendar;
