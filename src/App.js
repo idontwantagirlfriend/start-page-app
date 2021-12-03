@@ -3,7 +3,7 @@ import "./css/styles.css";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import React, { Component, createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import TopPanel from "./Components/TopPanel";
 import SearchBar from "./Components/SearchBar";
@@ -12,6 +12,7 @@ import Links from "./Components/Links";
 import Footer from "./Components/Footer";
 
 export const nightModeContext = createContext();
+export const handleToggleThemeContext = createContext();
 
 export default function App() {
   const [nightMode, setNightMode] = useState(true);
@@ -29,17 +30,15 @@ export default function App() {
     setMainId("main");
   };
 
-  const themeData = {
-    nightModeIsOn: nightMode,
-    handleToggleTheme: handleToggleTheme,
-  };
   return (
     <div className="App">
       <PageHead />
       <nightModeContext.Provider value={nightMode}>
         <div className={`container-fluid ${nightClassName}`} id={mainId}>
           <div className="container">
-            <TopPanel themeData={themeData} />
+            <handleToggleThemeContext.Provider value={handleToggleTheme}>
+              <TopPanel />
+            </handleToggleThemeContext.Provider>
             <div className="row page-block" id="searchBar-row">
               <SearchBar
                 onSearchBarAcquiresFocus={handleSearchBarAcquiresFocus}
@@ -55,7 +54,7 @@ export default function App() {
           </div>
         </div>
         <footer className={`${nightClassName}`}>
-          <Footer themeData={themeData} />
+          <Footer />
         </footer>
       </nightModeContext.Provider>
     </div>

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { nightModeContext } from "../App";
 import { darkModeClassNames } from "../css/js/darkModeClassNames";
 import { lightModeClassNames } from "../css/js/LightModeClassNames";
 
-export default function Footer(props) {
+export default function Footer() {
   const content = "Created with react!";
-  const { themeData } = props;
-  const { nightModeIsOn } = themeData;
-  const themeClassNames = nightModeIsOn
+  const themeClassNames = useContext(nightModeContext)
     ? darkModeClassNames
     : lightModeClassNames;
   return (

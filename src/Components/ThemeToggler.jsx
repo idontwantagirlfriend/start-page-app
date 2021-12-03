@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { handleToggleThemeContext, nightModeContext } from "../App";
 import { darkModeClassNames } from "../css/js/darkModeClassNames";
 import { lightModeClassNames } from "../css/js/LightModeClassNames";
 
 export default function ThemeToggler(props) {
-  const onToggleTheme = props.themeData.handleToggleTheme;
-  const nightModeIsOn = props.themeData.nightModeIsOn;
-  const themeClassNames = nightModeIsOn
+  const onToggleTheme = useContext(handleToggleThemeContext);
+  const themeClassNames = useContext(nightModeContext)
     ? darkModeClassNames
     : lightModeClassNames;
   const themeIconClassName = themeClassNames.icon;

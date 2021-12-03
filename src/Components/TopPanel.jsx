@@ -1,15 +1,15 @@
 import logo from "../logo.svg";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import { darkModeClassNames } from "../css/js/darkModeClassNames";
 import { lightModeClassNames } from "../css/js/LightModeClassNames";
-export default function TopPanel(props) {
+import { nightModeContext } from "../App";
+export default function TopPanel() {
   const [content, setContent] = useState(
     `I hope you know what you are doing...`
   );
-  const { themeData } = props;
-  const { nightModeIsOn } = themeData;
-  const themeClassNames = nightModeIsOn
+
+  const themeClassNames = useContext(nightModeContext)
     ? darkModeClassNames
     : lightModeClassNames;
 
@@ -27,7 +27,7 @@ export default function TopPanel(props) {
           <span className={textClassName}>{content}</span>
         </div>
         <div className="align-self-end align-content-end ms-auto ">
-          <ThemeToggler themeData={themeData} />
+          <ThemeToggler />
         </div>
       </div>
     </nav>
