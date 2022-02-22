@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { handleToggleThemeContext, nightModeContext } from "../App";
-import { darkModeClassNames } from "../css/js/darkModeClassNames";
-import { lightModeClassNames } from "../css/js/LightModeClassNames";
+import { darkModeClassNames } from "../js/darkModeClassNames";
+import { lightModeClassNames } from "../js/LightModeClassNames";
 
 export default function ThemeToggler(props) {
   const onToggleTheme = useContext(handleToggleThemeContext);

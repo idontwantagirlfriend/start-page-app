@@ -30,6 +30,12 @@ export default function App() {
     setMainId("main");
   };
 
+  const logKey = (event) => {
+    console.log(event);
+    console.log(event.keyCode);
+  };
+  document.addEventListener("keydown", logKey);
+
   return (
     <div className="App">
       <PageHead />

@@ -1,8 +1,8 @@
 import logo from "../logo.svg";
 import React, { useContext, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
-import { darkModeClassNames } from "../css/js/darkModeClassNames";
-import { lightModeClassNames } from "../css/js/LightModeClassNames";
+import { darkModeClassNames } from "../js/darkModeClassNames";
+import { lightModeClassNames } from "../js/LightModeClassNames";
 import { nightModeContext } from "../App";
 export default function TopPanel() {
   const [content, setContent] = useState(
