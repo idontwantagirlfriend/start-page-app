@@ -1,148 +1,111 @@
 nav {
   opacity: 0.75;
-  transition: background-color 0.15s cubic-bezier(1, 0, 0, 1),
-    color 0.15s cubic-bezier(1, 0, 0, 1);
-}
-nav.night {
-  background-color: transparent;
-}
+  transition: background-color 0.15s cubic-bezier(1, 0, 0, 1), color 0.15s cubic-bezier(1, 0, 0, 1); }
+  nav.night {
+    background-color: transparent; }
 
 footer {
   background-color: inherit;
   opacity: 0.75;
   color: #ffffff;
-  transition: background-color 0.15s cubic-bezier(1, 0, 0, 1);
-}
-footer.night {
-  background-color: #282c34;
-  transition: background-color 0.15s cubic-bezier(1, 0, 0, 1);
-}
+  transition: background-color 0.15s cubic-bezier(1, 0, 0, 1); }
+  footer.night {
+    background-color: #282c34;
+    transition: background-color 0.15s cubic-bezier(1, 0, 0, 1); }
 
 #main {
-  padding: 0;
-  padding-top: 100px;
-  min-height: 100vh;
   background-image: url("../res/Blue_sky.png");
   background-size: cover;
-  background-position: center;
+  background-position-x: center;
+  background-position-y: top;
   background-repeat: no-repeat;
-  transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    background-image 0.15s ease-in-out;
-}
-#main.night {
-  background-image: url("../res/Starry_night_sky.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #ffffff;
-}
+  background-attachment: fixed;
+  padding: 0;
+  padding-top: 30vh;
+  min-height: 100vh;
+  transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), background-image 0.15s ease-in-out; }
+  #main.night {
+    background-image: url("../res/Starry_night_sky.png");
+    color: #ffffff; }
+  #main-focus {
+    padding: 0;
+    padding-top: 30vh;
+    min-height: 100vh;
+    background-image: url("../res/Blue_sky.png");
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+    #main-focus.night {
+      background-image: url("../res/Starry_night_sky.png");
+      color: #ffffff; }
+
 .page-block {
-  background-color: rgba(255, 255, 255, 0.185);
-}
-#main-focus {
-  padding: 0;
-  padding-top: 250px;
-  min-height: 100vh;
-  background-image: url("../res/Blue_sky.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-#main-focus.night {
-  background-image: url("../res/Starry_night_sky.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #ffffff;
-}
+  background-color: rgba(255, 255, 255, 0.185); }
 
 #searchBar-row {
   background-color: transparent;
-  padding-bottom: 100px;
-}
+  padding-bottom: 10vh; }
+
 #searchBar-wrapper {
+  transition: margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), max-width 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-right 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), margin-bottom 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   padding-right: 8%;
   padding-left: 0;
   margin-left: 46%;
   max-width: 6%;
   height: 53px;
   border: 4px solid #0d6efd;
-  margin-bottom: inherit;
-  transition: margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    max-width 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    padding-right 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    margin-bottom 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-#searchBar-wrapper:hover {
-  padding-right: 4%;
-  margin-left: 20%;
-  max-width: 60%;
-}
+  margin-bottom: inherit; }
+  #searchBar-wrapper:hover {
+    padding-right: 4%;
+    margin-left: 20%;
+    max-width: 60%; }
+  #searchBar-wrapper.night {
+    border: 4px solid white; }
+
 #searchBar-wrapper-focus {
+  transition: margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), max-width 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-right 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), margin-bottom 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   padding-right: 4%;
   margin-left: 10%;
   max-width: 80%;
   height: 80px;
   border: 4px solid #0d6efd;
-  margin-bottom: 250px;
-  transition: margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    max-width 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    padding-right 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    margin-bottom 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-#searchBar-wrapper.night {
-  border: 4px solid white;
-}
-#searchBar-wrapper-focus.night {
-  border: 4px solid white;
-}
+  margin-bottom: 40vh; }
+  #searchBar-wrapper-focus.night {
+    border: 4px solid white; }
 
 #searchBar {
+  transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), font-size 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   opacity: 0;
   height: 100%;
   font-size: 20px;
-  background-color: rgba(255, 255, 255, 0.335);
-  transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    font-size 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-#searchBar:hover {
-  display: flex;
-  opacity: 1;
-  height: 100%;
-}
+  background-color: rgba(255, 255, 255, 0.335); }
+  #searchBar:hover {
+    display: flex;
+    opacity: 1;
+    height: 100%; }
+  #searchBar.night {
+    background-color: rgba(255, 255, 255, 0.185);
+    color: #ffffff; }
+
 #searchBar-focus {
+  transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), font-size 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   display: flex;
   opacity: 1;
   height: 100%;
   font-size: 30px;
-  background-color: rgba(255, 255, 255, 0.335);
-  transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    height 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    font-size 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-#searchBar.night {
-  background-color: rgba(255, 255, 255, 0.185);
-  color: #ffffff;
-}
-#searchBar-focus.night {
-  background-color: rgba(255, 255, 255, 0.185);
-  color: #ffffff;
-}
+  background-color: rgba(255, 255, 255, 0.335); }
+  #searchBar-focus.night {
+    background-color: rgba(255, 255, 255, 0.185);
+    color: #ffffff; }
 
 #search-icon {
   padding-left: 0px;
   padding-right: 0px;
-  transition: padding-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    padding-right 0.1s linear;
-}
-
-#search-icon-focus {
-  padding-left: 50px;
-  padding-right: 50px;
-  transition: padding-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    padding-right 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
+  transition: padding-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-right 0.1s linear; }
+  #search-icon-focus {
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: padding-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), padding-right 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
