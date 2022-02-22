@@ -33,6 +33,15 @@ export default function SearchBar(props) {
     setSearchIconId("search-icon");
     props.onSearchBarLosesFocus();
   };
+  const handlePressSlashFocus = (event) => {
+    const component = document.getElementById(searchBarId);
+    if (event.keyCode === 191 && component !== document.activeElement) {
+      event.preventDefault();
+      component.focus();
+    }
+  };
+  document.addEventListener("keydown", handlePressSlashFocus);
+
   return (
     <div className="py-1">
       <form className="container-fluid" onSubmit={handleSubmit}>
