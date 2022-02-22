@@ -59,7 +59,7 @@ footer {
   }
   &-focus {
     padding: 0;
-    padding-top: 30vh;
+    padding-top: 35vh;
     min-height: 100vh;
     @include page-wide-fixed-bg("../res/Blue_sky.png");
     transition: padding-top 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -95,17 +95,17 @@ footer {
   &.night {
     border: 4px solid white;
   }
-}
-#searchBar-wrapper-focus {
-  @include search-bar-wrapper-transition;
-  padding-right: 4%;
-  margin-left: 10%;
-  max-width: 80%;
-  height: 80px;
-  border: 4px solid #0d6efd;
-  margin-bottom: 40vh;
-  &.night {
-    border: 4px solid white;
+  &-focus {
+    @include search-bar-wrapper-transition;
+    padding-right: 4%;
+    margin-left: 10%;
+    max-width: 80%;
+    height: 80px;
+    border: 4px solid #0d6efd;
+    margin-bottom: 55vh;
+    &.night {
+      border: 4px solid white;
+    }
   }
 }
 
