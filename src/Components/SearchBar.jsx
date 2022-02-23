@@ -33,14 +33,21 @@ export default function SearchBar(props) {
     setSearchIconId("search-icon");
     props.onSearchBarLosesFocus();
   };
-  const handlePressSlashFocus = (event) => {
-    const component = document.getElementById(searchBarId);
-    if (event.keyCode === 191 && component !== document.activeElement) {
+  const handlePressSlashFocus = (event, id) => {
+    const slashIsPressed = event.keyCode === 191;
+    const component = document.getElementById(id);
+    if (
+      slashIsPressed &&
+      component !== null &&
+      component !== document.activeElement
+    ) {
       event.preventDefault();
       component.focus();
     }
   };
-  document.addEventListener("keydown", handlePressSlashFocus);
+  document.addEventListener("keydown", (event) =>
+    handlePressSlashFocus(event, searchBarId)
+  );
 
   return (
     <div className="py-1">
